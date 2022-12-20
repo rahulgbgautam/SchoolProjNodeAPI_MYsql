@@ -2,25 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const conn = require("./db/conn");
-const students = require("./routers/students");
-const subjects = require("./routers/subjects");
-const teachers = require("./routers/teachers");
+const blogs = require("./routers/blogs");
 app.use(bodyParser.json());
-app.use(students);
-app.use(subjects);
-app.use(teachers);
-
-
-   
-
-
-
-// <------------------------ subject ------------------------->
-
-
-
-// <------------------------ teacher ------------------------->
-
+app.use(blogs);
 
 function apiResponse(results){
     return JSON.stringify({"status": 200, "error": null, "response": results});
